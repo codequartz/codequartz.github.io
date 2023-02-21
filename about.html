@@ -62,17 +62,42 @@
             <p>With a passion for gaming and a commitment to building a positive and inclusive community, Monique has
                 been instrumental in shaping the direction and success of the company. Under her guidance,
                 Fenrir has become a leading gaming platform within the gaming industry.</p>
+            <button onclick="showMonique()">Monique Wright</button>
             <h3>Yasmine Rodriquez - CFO</h3>
             <img src="woman_coo.jpg" alt="image of woman coo" height="100" width="100">
             <p>Meet Yasmine Rodriquez, the operational powerhouse behind Fenrir. With a background in management and a
                 passion for efficiency, Yasmine has been instrumental in ensuring the smooth and seamless operation
                 of the company. Under her leadership, Fenrir has achieved impressive efficiency and scalability,
                 allowing the company to continue to grow and expand its offerings to players.</p>
+            <button onclick="showYasmine()">Yasmine Rodriguez</button>
+
+
+            <h3 id="staff-name"></h3>
+            <img id="staff-img" />
+            <p id="staff-text"></p>
         </section>
+        <hr>
+
         <footer>
             <p>Footer content coming soon...</p>
         </footer>
     </main>
+
+    <script>
+        function showMonique() {
+            document.getElementById("staff-name").innerText = "Monique Wright - CEO";
+            document.getElementById("staff-img").src = "woman_ceo.jpeg";
+            document.getElementById("staff-text").innerText = "With a passion for gaming and a commitment to building a positive and inclusive community, Monique has been instrumental in shaping the direction and success of the company. Under her guidance, Fenrir has become a leading gaming platform within the gaming industry.";
+        }
+
+        function showYasmine() {
+            document.getElementById("staff-name").innerText = "Yasmine Rodriguez - CFO";
+            document.getElementById("staff-img").src = "woman_coo.jpg";
+            document.getElementById("staff-text").innerText = "Meet Yasmine Rodriguez, the operational powerhouse behind Fenrir. With a background in management and a passion for efficiency, Yasmine has been instrumental in ensuring the smooth and seamless operation of the company. Under her leadership, Fenrir has achieved impressive efficiency and scalability, allowing the company to continue to grow and expand its offerings to players.";
+        }
+
+
+    </script>
 </body>
 
 </html>
