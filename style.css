@@ -13,7 +13,7 @@ nav ul {
     background-color: darkgrey;
 }
 
-nav ul li a{
+nav ul li a {
     color: #bc0000;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
@@ -24,7 +24,7 @@ nav ul li a{
     text-align: center;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     color: black;
 }
 
@@ -36,3 +36,4 @@ footer {
 footer p {
     color: #bc0000;
 }
+
