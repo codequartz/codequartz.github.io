@@ -28,16 +28,17 @@ nav ul li a:hover {
     color: black;
 }
 
+
 footer {
-    background-color: darkgray;
-    line-height: 10em;
+    background-color: #bc0000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    line-height: 80px;
 }
 
-footer p {
-    color: #bc0000;
+.footer-text {
+    font-size: 0.75em;
+    font-style: italic;
+    text-align: center;
 }
-
-.featgames{
-    list-style: none;
-}
-
