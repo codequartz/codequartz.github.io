@@ -13,6 +13,8 @@
 
         ul {
             list-style: none;
+            display: flex;
+            gap: 16px;
         }
 
         table {
@@ -25,6 +27,7 @@
         td {
             border: 1px solid #bc0000;
             padding: 10px;
+            font-size: 1.2em;
         }
 
         th {
@@ -32,11 +35,7 @@
             color: #fff;
         }
 
-        th,td {
-            font-size: 1.2em;
-        }
-
-        main{
+        main {
             width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -85,28 +84,28 @@
                 <th>Console</th>
                 <th>Age</th>
             </tr>
-            <tr>
+            <tr class="game1">
                 <td>Final Fantasy XIV</td>
                 <td>$34.99</td>
                 <td>Fantasy/Action/Action</td>
                 <td>PS4</td>
                 <td>12+</td>
             </tr>
-            <tr>
+            <tr class="game2">
                 <td>Kingdom Hearts 3</td>
                 <td>$19.99</td>
                 <td>Fantasy/Action/Action</td>
                 <td>PS4</td>
                 <td>12+</td>
             </tr>
-            <tr>
+            <tr class="game3">
                 <td>Harry Potter Legacy</td>
                 <td>$60.00</td>
                 <td>Fantasy/Action/Action</td>
                 <td>PS4</td>
                 <td>12+</td>
             </tr>
-            <tr>
+            <tr class="game4">
                 <td>God Eater 3</td>
                 <td>$19.99</td>
                 <td>Fantasy/Action/Action</td>
@@ -114,11 +113,27 @@
                 <td>12+</td>
             </tr>
         </table>
+
+        <label for="search">Search games:</label>
+        <input type="text" id="search" name="search">
+        <button id="findBtn">Find!</button>
+
     </main>
 
     <footer class="footer-text">
         <p>Site copyright © 2023 Fenrir</p>
     </footer>
+
+    <script>
+        const findBtn = document.getElementById("findBtn");
+        const searchInput = document.getElementById("search");
+        
+        findBtn.addEventListener("click", function() {
+          const searchTerm = searchInput.value;
+          // Do something with the search term, e.g. search the table for matching rows
+          console.log(`Searching for "${searchTerm}"...`);
+        });
+      </script>
 </body>
 
 </html>
