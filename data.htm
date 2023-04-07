@@ -118,6 +118,10 @@
         <input type="text" id="search" name="search">
         <button id="findBtn">Find!</button>
 
+        <div id="something">
+
+        </div>
+
     </main>
 
     <footer class="footer-text">
@@ -127,13 +131,33 @@
     <script>
         const findBtn = document.getElementById("findBtn");
         const searchInput = document.getElementById("search");
-        
-        findBtn.addEventListener("click", function() {
-          const searchTerm = searchInput.value;
-          // Do something with the search term, e.g. search the table for matching rows
-          console.log(`Searching for "${searchTerm}"...`);
+
+        findBtn.addEventListener("click", function () {
+            const searchTerm = searchInput.value;
+            // Do something with the search term, e.g. search the table for matching rows
+            console.log(`Searching for "${searchTerm}"...`);
         });
-      </script>
+
+        function compareNumbers() {
+            const input = document.getElementById("search").value;
+            const num1 = 34.99;
+            const num2 = 19.99;
+            const num3 = 60.00;
+            const num4 = 19.99;
+
+            if (input == num1) {
+                console.log("Match with num1");
+            } else if (input == num2) {
+                console.log("Match with num2");
+            } else if (input == num3) {
+                console.log("Match with num3");
+            } else if (input == num4) {
+                console.log("Match with num4");
+            } else {
+                console.log("No match found");
+            };
+        }
+    </script>
 </body>
 
 </html>
