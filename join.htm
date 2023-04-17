@@ -6,8 +6,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Fenrir - Join</title>
+    <style>
+        /* Custom properties */
+        :root {
+            --color-red: #bc0000;
+            --color-white: #fff;
+            --color-darkgray: black;
+        }
 
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        /* Form styles */
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid var(--color-red);
+            border-radius: 10px;
+            background-color: var(--color-white);
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 2px solid var(--color-red);
+            border-radius: 5px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: var(--color-red);
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--color-darkgray);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid var(--color-darkgray);
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            display: inline-block;
+            margin: 20px 0 0 auto;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--color-red);
+            color: var(--color-white);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: var(--color-darkgray);
+        }
+    </style>
+    <title>Fenrir - Join</title>
 </head>
 
 <body>
@@ -29,7 +106,65 @@
             </ul>
         </nav>
     </header>
-    
+
+    <form>
+        <h2 class="mailinglist">Please join our mailing list</h2>
+        <fieldset>
+            <legend>Personal information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Gaming preferences</legend>
+            <label for="rpg">RPG</label>
+            <input type="checkbox" id="rpg" name="rpg"><br>
+
+            <label for="fps">FPS</label>
+            <input type="checkbox" id="fps" name="fps"><br>
+
+            <label for="strategy">Strategy</label>
+            <input type="checkbox" id="strategy" name="strategy"><br>
+
+            <label for="sports">Sports</label>
+            <input type="checkbox" id="sports" name="sports"><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Weekly Gameplay</legend>
+            <label>How many games do you play per week?</label><br>
+            <input type="radio" id="1game" name="games-per-week" value="1">
+            <label for="1game">1 game</label><br>
+            <input type="radio" id="2games" name="games-per-week" value="2">
+            <label for="2games">2 games</label><br>
+            <input type="radio" id="3to5games" name="games-per-week" value="3-5">
+            <label for="3to5games">3-5 games</label><br>
+            <input type="radio" id="6to10games" name="games-per-week" value="6-10">
+            <label for="6to10games">6-10 games</label><br>
+            <input type="radio" id="morethan10games" name="games-per-week" value="morethan10">
+            <label for="morethan10games">More than 10 games</label><br>
+        </fieldset>
+
+        <br>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments"></textarea>
+
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
     <footer class="footer-text">
         <p>Site copyright © 2023 Fenrir</p>
     </footer>

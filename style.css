@@ -51,3 +51,10 @@ footer {
     width: 100px;
     height: 100px;
 }
+
+/*join.htm*/
+fieldset {
+    border: 2px solid black;
+    padding: 20px;
+    margin-top: 20px;
+}
