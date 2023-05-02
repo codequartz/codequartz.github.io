@@ -12,10 +12,11 @@ nav {
     height: 100px 1fr;
     display: grid;
     gap: 20px;
+
 }
 
 nav ul {
-    display: inline-flex;
+    display: flex;
     list-style: none;
     background-color: var(--dark-color);
 }
@@ -72,13 +73,19 @@ fieldset {
 .image-container img {
     width: 100%;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    height: 100px;
+    width: 100px;
   }
 
 .image-container.large-width {
     grid-column: span 2;
+    height: 100px;
+    width: 100px;
 }
 
 .image-container.large-height {
     grid-row: span 2;
+    height: 100px;
+    width: 100px;
 }
 
