@@ -8,81 +8,108 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         /* Custom properties */
-        :root {
-            --color-red: #bc0000;
-            --color-white: #fff;
-            --color-darkgray: black;
-        }
+    :root {
+        --color-red: #bc0000;
+        --color-white: #fff;
+        --color-black: black;
+    }
 
-        /* Global styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-        }
+    /* Global styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+    }
 
-        /* Form styles */
-        form {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 2px solid var(--color-red);
-            border-radius: 10px;
-            background-color: var(--color-white);
-        }
+    /* Form styles */
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 2px solid var(--color-red);
+        border-radius: 10px;
+        background-color: var(--color-white);
+    }
 
-        fieldset {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 2px solid var(--color-red);
-            border-radius: 5px;
-        }
+    fieldset {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 2px solid var(--color-red);
+        border-radius: 5px;
+    }
 
-        legend {
-            font-weight: bold;
-            color: var(--color-red);
-        }
+    legend {
+        font-weight: bold;
+        color: var(--color-red);
+    }
 
-        label {
-            display: inline-block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: var(--color-darkgray);
-        }
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: var(--color-black);
+    }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea {
-            display: block;
-            margin-bottom: 10px;
-            padding: 5px;
-            border: 1px solid var(--color-darkgray);
-            border-radius: 5px;
-            width: 100%;
-        }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        display: block;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid var(--color-black);
+        border-radius: 5px;
+        width: 100%;
+    }
 
-        input[type="checkbox"],
-        input[type="radio"] {
-            margin-right: 5px;
-        }
+    input[type="checkbox"],
+    input[type="radio"] {
+        margin-right: 5px;
+    }
 
-        input[type="submit"],
-        input[type="reset"] {
-            display: inline-block;
-            margin: 20px 0 0 auto;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: var(--color-red);
-            color: var(--color-white);
-            font-weight: bold;
-            cursor: pointer;
-        }
+    input[type="submit"],
+    input[type="reset"] {
+        display: inline-block;
+        margin: 20px 0 0 auto;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--color-red);
+        color: var(--color-white);
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-        input[type="submit"]:hover,
-        input[type="reset"]:hover {
-            background-color: var(--color-darkgray);
-        }
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+        background-color: var(--color-black);
+    }
+
+    /* Six different selectors */
+    .mailinglist {
+        font-size: 24px;
+        color: var(--color-black);
+    }
+
+    #name {
+        font-weight: bold;
+    }
+
+    #address {
+        background-color: #f9f9f9;
+    }
+
+    #email {
+        border-color: var(--color-black);
+    }
+
+    #phone {
+        border-color: var(--color-black);
+    }
+
+    input[type="checkbox"] + label {
+        font-style: italic;
+        color: var(--color-black);
+    }
     </style>
     <title>Fenrir - Join</title>
 </head>
@@ -91,19 +118,14 @@
     <header>
         <a href="index.html"><img class="logo" src="../images/fenrir_logo.png" alt="three-headed wolf logo" height="100"
                 width="100"></a>
-        <!--Logo - color code is #bc0000 -->
+        <!--Logo color code is #bc0000 -->
         <h1 class="orgname">Fenrir</h1> <!--Gaming Company Name-->
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="data.htm">Featured Games</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="join.htm">Join</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <p><a href="../pages/index.html">Home</a></p>
+            <p><a href="../pages/about.html">About Us</a></p>
+            <p><a href="../pages/data.html">Games</a></p>
+            <p><a href="../pages/join.html">Join</a></p>
+            <p><a href="#">Contact</a></p>
         </nav>
     </header>
 
@@ -166,7 +188,7 @@
     </form>
 
     <footer class="footer-text">
-        <p>Site copyright © 2023 Fenrir</p>
+        <p>Site copyright &copy; 2023 Fenrir</p>
     </footer>
 </body>
 

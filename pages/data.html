@@ -8,37 +8,40 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         body {
-            background: url("https://wallpaper.dog/large/20355544.jpg");
-        }
-
-        ul {
-            list-style: none;
-            display: flex;
-            gap: 16px;
+            background-image: url("https://wallpaper.dog/large/20355544.jpg");
         }
 
         table {
             border-collapse: collapse;
-            border: 2px solid #bc0000;
+            border: thin solid #bc0000;
             font-family: Arial, Verdana, sans-serif;
         }
 
-        th,
         td {
-            border: 1px solid #bc0000;
-            padding: 10px;
-            font-size: 1.2em;
+            background-color: lightgray;
+            color: #bc0000;
         }
 
         th {
             background-color: #bc0000;
-            color: #fff;
+            color: lightgray;
+        }
+
+        th,
+        td {
+            padding: 5px 10px;
+            border: 1px solid #bc0000;
+        }
+
+        @viewport {
+            width: 10%;
         }
 
         main {
             width: 800px;
             margin-left: auto;
             margin-right: auto;
+            background-color: white;
         }
     </style>
     <title>Fenrir - Featured Games</title>
@@ -48,25 +51,20 @@
     <header>
         <a href="index.html"><img class="logo" src="../images/fenrir_logo.png" alt="three-headed wolf logo" height="100"
                 width="100"></a>
-        <!--Logo - color code is #bc0000 -->
+        <!--Logo color code is #bc0000 -->
         <h1 class="orgname">Fenrir</h1> <!--Gaming Company Name-->
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="data.htm">Featured Games</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="join.htm">Join</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <p><a href="../pages/index.html">Home</a></p>
+            <p><a href="../pages/about.html">About Us</a></p>
+            <p><a href="../pages/data.html">Games</a></p>
+            <p><a href="../pages/join.html">Join</a></p>
+            <p><a href="#">Contact</a></p>
         </nav>
     </header>
 
     <main>
-        <h2>Some information about our featured games</h2>
-        <ul>
+        <h2 class="info-text">Some information about our featured games</h2>
+        <ul class="game-image">
             <li><img src="https://cdn-prod.scalefast.com/public/assets/img/resized/squareenix-store-v3/a18b016fa0c78acfd4fb601fc879f917_KR_700.jpg"
                     alt="Box art of Final Fantasy 14" width="200" height="300">Final Fantasy XIV</li>
             <li><img src="https://cdn-prod.scalefast.com/public/assets/img/resized/squareenix-store-v3/88c11e0a782ef4e5738ffce90c125e15_KR_700.jpg"
@@ -86,78 +84,67 @@
                 <th>Age</th>
             </tr>
             <tr class="ffxiv">
-                <td>Final Fantasy XIV</td>
-                <td>$34.99</td>
+                <td id="ff15">Final Fantasy XIV</td>
+                <td id="34.99">$34.99</td>
                 <td>Fantasy/Action/Action</td>
                 <td>PS4</td>
                 <td>12+</td>
             </tr>
             <tr class="kingdomhearts">
-                <td>Kingdom Hearts 3</td>
-                <td>$19.99</td>
+                <td id="kh3">Kingdom Hearts 3</td>
+                <td id="20.99">$20.99</td>
                 <td>Fantasy/Action/Action</td>
                 <td>PS4</td>
                 <td>12+</td>
             </tr>
             <tr class="harrypotter">
-                <td>Harry Potter Legacy</td>
-                <td>$60.00</td>
+                <td id="hpl">Harry Potter Legacy</td>
+                <td id="60.00">$60.00</td>
                 <td>Fantasy/Action/Action</td>
                 <td>PS4</td>
                 <td>12+</td>
             </tr>
             <tr class="godeater">
-                <td>God Eater 3</td>
-                <td>$19.99</td>
+                <td id="ge3">God Eater 3</td>
+                <td id="19.99">$19.99</td>
                 <td>Fantasy/Action/Action</td>
                 <td>PS4</td>
                 <td>12+</td>
             </tr>
         </table>
 
-        <label for="search">Search games:</label>
-        <input type="text" id="search" name="search">
-        <button id="findBtn">Find!</button>
+        <input type="text">
+        <label for="search">Search games</label>
+        <button id="find-button">Find!</button>
 
-        <div id="something">
-
-        </div>
-
+        <div id="something"></div>
     </main>
 
+    <script>
+        document.getElementById("find-button").addEventListener("click", function() {
+          var userInput = document.getElementsByTagName("input")[0].value.toLowerCase();
+          var games = document.getElementsByTagName("td");
+          var results = [];
+          
+          for (var i = 0; i < games.length; i++) {
+            var gameName = games[i].innerHTML.toLowerCase();
+            if (gameName.includes(userInput)) {
+              results.push(games[i].parentNode.outerHTML);
+            }
+          }
+          
+          if (results.length > 0) {
+            document.getElementById("something").innerHTML = "<table><tr><th>Games</th><th>Price</th><th>Genre</th><th>Console</th><th>Age</th></tr>" + results.join("") + "</table>";
+          } else {
+            document.getElementById("something").innerHTML = "<p>No results found.</p>";
+          }
+        });
+      </script>
+
     <footer class="footer-text">
-        <p>Site copyright © 2023 Fenrir</p>
+        <p>Site copyright &copy; 2023 Fenrir</p>
     </footer>
 
-    <script>
-        const findBtn = document.getElementById("findBtn");
-        const searchInput = document.getElementById("search");
-
-        findBtn.addEventListener("click", function () {
-            const searchTerm = searchInput.value;
-            console.log(`Searching for "${searchTerm}"...`);
-        });
-
-        function compareNumbers() {
-            const input = document.getElementById("search").value;
-            const num1 = 34.99;
-            const num2 = 19.99;
-            const num3 = 60.00;
-            const num4 = 19.99;
-
-            if (input == num1) {
-                console.log("Match with num1");
-            } else if (input == num2) {
-                console.log("Match with num2");
-            } else if (input == num3) {
-                console.log("Match with num3");
-            } else if (input == num4) {
-                console.log("Match with num4");
-            } else {
-                console.log("No match found");
-            };
-        }
-    </script>
 </body>
 
 </html>
