@@ -18,7 +18,7 @@
         }
 
         td {
-            background-color: lightgray;
+            /* background-color: lightgray; */ /*commented this out for the nth-child*/
             color: #bc0000;
         }
 
@@ -43,6 +43,14 @@
             margin-right: auto;
             background-color: white;
         }
+
+        .game-table tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        .game-table tr:nth-child(odd) {
+            background-color: rgb(40, 182, 40);
+        }
     </style>
     <title>Fenrir - Featured Games</title>
 </head>
@@ -58,7 +66,7 @@
             <p><a href="../pages/about.html">About Us</a></p>
             <p><a href="../pages/data.html">Games</a></p>
             <p><a href="../pages/join.html">Join</a></p>
-            <p><a href="#">Contact</a></p>
+            <p><a href="../pages/shapes.html">Shapes</a></p>
         </nav>
     </header>
 
@@ -117,21 +125,27 @@
             <input type="text">
             <label for="search">Search games</label>
             <button id="find-button">Find!</button>
+            <button id="find-game">Find a game by its number!</button>
+            <button id="add-button">Add a game</button>
+            <button id="remove-button">Remove a game</button>
         </div>
 
         <div id="something"></div>
     </main>
 
     <script>
+        //search game
         document.getElementById("find-button").addEventListener("click", function () {
             var userInput = document.getElementsByTagName("input")[0].value.toLowerCase();
-            var games = document.getElementsByTagName("td");
+            var rows = document.querySelectorAll(".game-table tr:not(:first-child)");
             var results = [];
 
-            for (var i = 0; i < games.length; i++) {
-                var gameName = games[i].innerHTML.toLowerCase();
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+                var gameName = cells[0].textContent.toLowerCase();
+
                 if (gameName.includes(userInput)) {
-                    results.push(games[i].parentNode.outerHTML);
+                    results.push(rows[i].outerHTML);
                 }
             }
 
@@ -140,6 +154,58 @@
             } else {
                 document.getElementById("something").innerHTML = "<p>No results found.</p>";
             }
+        });
+
+        //find game by number
+        var games = [
+            "Final Fantasy XIV",
+            "Kingdom Hearts 3",
+            "Harry Potter Legacy",
+            "God Eater 3",
+        ];
+
+        document.getElementById("find-game").addEventListener("click", function () {
+            var userInput;
+            var gameNumber;
+
+            do {
+                userInput = prompt("Enter game number (1-4):");
+                gameNumber = parseInt(userInput);
+
+                if (isNaN(gameNumber) || gameNumber < 1 || gameNumber > games.length) {
+                    alert("Please enter a valid game number between 1 and " + games.length);
+                }
+            } while (isNaN(gameNumber) || gameNumber < 1 || gameNumber > games.length);
+
+            var selectedGame = games[gameNumber - 1];
+            alert("You have selected: " + selectedGame);
+        });
+
+        //add game
+        document.getElementById("add-button").addEventListener("click", function () {
+            var newGameName = prompt("Enter the name of a new game:");
+            if (newGameName) {
+                games.push(newGameName);
+                alert("New game added: " + newGameName);
+            }
+        });
+
+        //remove game
+        document.getElementById("remove-button").addEventListener("click", function () {
+            var userInput;
+            var gameNumber;
+
+            do {
+                userInput = prompt("Enter the game number to remove (1-" + games.length + "):");
+                gameNumber = parseInt(userInput);
+
+                if (isNaN(gameNumber) || gameNumber < 1 || gameNumber > games.length) {
+                    alert("Please enter a valid game number between 1 and " + games.length);
+                }
+            } while (isNaN(gameNumber) || gameNumber < 1 || gameNumber > games.length);
+
+            var removedGame = games.splice(gameNumber - 1, 1);
+            alert("Removed game: " + removedGame);
         });
     </script>
 
