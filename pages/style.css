@@ -10,8 +10,10 @@ header {
     border: var(--dark-color) medium solid;
 }
 
-.orgname {
-    display: inline-block;
+@media (max-width: 600px) {
+    header {
+        text-align: center;
+    }
 }
 
 nav {
@@ -142,23 +144,33 @@ footer p {
 
 #section2 {
     transform: translate(20px, 20px);
-  }
+}
 
-  #section3 {
+#section3 {
     transform: rotate(60deg);
     transform-origin: 5px 33px;
-  }
+}
 
-  #section4 {
+#section4 {
     transform: scale(2, 1);
     transform-origin: -15px;
-  }
+}
 
-  #section5 {
+#section5 {
     transform: skew(-45deg);
     transform-origin: 0px 30px;
-  }
+}
 
-  #transformations-list li::marker {
+#transformations-list li::marker {
     color: red;
-  }
+}
+
+.articles-container {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 800px) {
+    .articles-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
