@@ -10,6 +10,10 @@ header {
     border: var(--dark-color) medium solid;
 }
 
+.orgname {
+    display: inline-block;
+}
+
 nav {
     background-color: var(--dark-color);
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -52,7 +56,7 @@ footer p {
     text-align: center;
     list-style: none;
     display: flex;
-    gap: 16px;
+    
 }
 
 .game-table {
@@ -72,6 +76,8 @@ footer p {
 #staff-img {
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
+    width: 100px;
+    height: 100px;
 }
 
 .gridcontainer {
