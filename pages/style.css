@@ -73,6 +73,10 @@ footer p {
     text-align: center;
 }
 
+.about-us {
+    margin-top: 6%;
+}
+
 #staff-img {
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
@@ -100,12 +104,14 @@ footer p {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.large-width {
-    grid-column: span 2;
+.large-width img {
+    width: 100%;
+    grid-column: 2;
 }
 
-.large-height {
-    grid-row: span 2;
+.large-height img{
+    width: 100%;
+    grid-row: 2;
 }
 
 .caption {
