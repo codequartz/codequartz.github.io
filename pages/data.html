@@ -75,7 +75,7 @@
                     alt="Box art of God Eater 3" width="200" height="300">God Eater 3</li>
         </ul>
 
-        <table>
+        <table class="game-table">
             <tr>
                 <th>Games</th>
                 <th>Price</th>
@@ -113,33 +113,35 @@
             </tr>
         </table>
 
-        <input type="text">
-        <label for="search">Search games</label>
-        <button id="find-button">Find!</button>
+        <div class="game-search">
+            <input type="text">
+            <label for="search">Search games</label>
+            <button id="find-button">Find!</button>
+        </div>
 
         <div id="something"></div>
     </main>
 
     <script>
-        document.getElementById("find-button").addEventListener("click", function() {
-          var userInput = document.getElementsByTagName("input")[0].value.toLowerCase();
-          var games = document.getElementsByTagName("td");
-          var results = [];
-          
-          for (var i = 0; i < games.length; i++) {
-            var gameName = games[i].innerHTML.toLowerCase();
-            if (gameName.includes(userInput)) {
-              results.push(games[i].parentNode.outerHTML);
+        document.getElementById("find-button").addEventListener("click", function () {
+            var userInput = document.getElementsByTagName("input")[0].value.toLowerCase();
+            var games = document.getElementsByTagName("td");
+            var results = [];
+
+            for (var i = 0; i < games.length; i++) {
+                var gameName = games[i].innerHTML.toLowerCase();
+                if (gameName.includes(userInput)) {
+                    results.push(games[i].parentNode.outerHTML);
+                }
             }
-          }
-          
-          if (results.length > 0) {
-            document.getElementById("something").innerHTML = "<table><tr><th>Games</th><th>Price</th><th>Genre</th><th>Console</th><th>Age</th></tr>" + results.join("") + "</table>";
-          } else {
-            document.getElementById("something").innerHTML = "<p>No results found.</p>";
-          }
+
+            if (results.length > 0) {
+                document.getElementById("something").innerHTML = "<table><tr><th>Games</th><th>Price</th><th>Genre</th><th>Console</th><th>Age</th></tr>" + results.join("") + "</table>";
+            } else {
+                document.getElementById("something").innerHTML = "<p>No results found.</p>";
+            }
         });
-      </script>
+    </script>
 
     <footer class="footer-text">
         <p>Site copyright &copy; 2023 Fenrir</p>

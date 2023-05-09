@@ -55,6 +55,16 @@ footer p {
     gap: 16px;
 }
 
+.game-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-search {
+    margin: 5%;
+    text-align: center;
+}
+
 .info-text {
     text-align: center;
 }
