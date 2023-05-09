@@ -56,7 +56,7 @@ footer p {
     text-align: center;
     list-style: none;
     display: flex;
-    
+
 }
 
 .game-table {
@@ -109,7 +109,7 @@ footer p {
     grid-column: 2;
 }
 
-.large-height img{
+.large-height img {
     width: 100%;
     grid-row: 2;
 }
@@ -120,3 +120,45 @@ footer p {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.7);
 }
+
+.shapes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    min-height: 100px;
+    background-color: var(--light-color);
+    margin-top: 10px;
+}
+
+.shapes section {
+    background-color: var(--dark-color);
+    width: 50px;
+    height: 50px;
+}
+
+.dark-square {
+    color: lightgray;
+}
+
+#section2 {
+    transform: translate(20px, 20px);
+  }
+
+  #section3 {
+    transform: rotate(60deg);
+    transform-origin: 5px 33px;
+  }
+
+  #section4 {
+    transform: scale(2, 1);
+    transform-origin: -15px;
+  }
+
+  #section5 {
+    transform: skew(-45deg);
+    transform-origin: 0px 30px;
+  }
+
+  #transformations-list li::marker {
+    color: red;
+  }
