@@ -174,3 +174,27 @@ footer p {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+article p:first-of-type::first-letter {
+    color: red;
+    font-weight: bold;
+}
+
+article p:first-of-type::first-line {
+    font-variant: small-caps;
+}
+
+article p:first-of-type {
+    font-size: 120%;
+}
+
+.article-image {
+    float: left;
+}
+
+/* Container query for article width less than 500px */
+@container (max-width: 500px) {
+    .article-image {
+        float: right;
+    }
+}

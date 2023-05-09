@@ -27,9 +27,10 @@
     <main>
         <h1>Welcome to the Home of Gaming</h1>
         <div class="articles-container"></div>
-        <article>
+        <article id="article1">
             <section>
                 <h2>Background</h2>
+                <img src="../images/lightning.jpg" alt="Image 1" class="article-image">
                 <h3>Who We Are</h3>
                 <p>Fenrir is a dynamic gaming platform where players can come together to explore, compete, and have
                     fun. Our mission is to provide a diverse range of gaming experiences for players of all skill
@@ -47,8 +48,48 @@
                 </p>
             </section>
         </article>
+        <article id="article2">
+            <section>
+                <h2>World of Games</h2>
+                <img src="../images/art.png" alt="Image 2" class="article-image">
+                <h3>Games We Create</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, iusto officia. Optio delectus
+                    quasi iure, necessitatibus corporis, dignissimos possimus quos quis dolorem quaerat quo ipsum hic.
+                    Illum illo soluta quasi?</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis sequi rem, quos aperiam voluptates
+                    accusantium reprehenderit expedita, totam neque nihil reiciendis harum dolorum sed molestiae,
+                    similique temporibus alias dolor voluptatibus.</p>
+                <h3>Why We Create</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta quia vitae alias consequuntur, dicta
+                    possimus. Iste molestiae velit beatae, ratione illum repudiandae. Fuga aperiam odio molestias, harum
+                    qui quaerat velit?</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, maiores earum! Velit deserunt,
+                    voluptatum atque rem eos, dolorum sunt veritatis natus nostrum ea, dicta reprehenderit corrupti
+                    facilis eveniet. Quam, sit.
+                </p>
+            </section>
+        </article>
         </div>
+        <button id="swapButton">Swap articles</button>
     </main>
+
+    <script>
+        document.getElementById("swapButton").addEventListener("click", function() {
+    // Get references to the article elements
+    var article1 = document.getElementById("article1");
+    var article2 = document.getElementById("article2");
+
+    // Clone the content of article1
+    var article1Content = article1.innerHTML;
+
+    // Replace the content of article1 with the content of article2
+    article1.innerHTML = article2.innerHTML;
+
+    // Replace the content of article2 with the cloned content of article1
+    article2.innerHTML = article1Content;
+});
+
+    </script>
 
     <footer class="footer-text">
         <p>Site copyright &copy; 2023 Fenrir</p>
