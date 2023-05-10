@@ -18,24 +18,23 @@ header {
 
 nav {
     background-color: var(--dark-color);
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     display: grid;
-    gap: 230px;
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    gap: 10px;
 }
 
 nav p {
     border: medium solid var(--light-color);
     background-color: var(--dark-color);
     display: inline-block;
-    width: 85px;
     text-align: center;
     margin-left: 3px;
 }
 
-nav a {
+nav p a {
+    font-weight: bold;
     color: var(--light-color);
     text-decoration: none;
-    font-weight: bold;
 }
 
 nav p a:hover {
@@ -87,34 +86,34 @@ footer p {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-flow: dense;
     grid-gap: 10px;
-  }
+}
 
-  .grid-item {
+.grid-item {
     width: 100%;
-  }
+}
 
-  .grid-item img {
+.grid-item img {
     /* display: block; */
     width: 100%;
     height: auto;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
+}
 
-  .grid-item-wide {
+.grid-item-wide {
     grid-column: span 2;
-  }
-  
-  .grid-item-tall {
-    grid-row: span 2;
-  }
+}
 
-  .caption {
+.grid-item-tall {
+    grid-row: span 2;
+}
+
+.caption {
     bottom: 5px;
     left: 5px;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 5px;
-  }
+}
 
 .shapes {
     display: grid;
