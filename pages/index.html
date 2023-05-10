@@ -74,21 +74,20 @@
     </main>
 
     <script>
-        document.getElementById("swapButton").addEventListener("click", function() {
-    // Get references to the article elements
-    var article1 = document.getElementById("article1");
-    var article2 = document.getElementById("article2");
+        document.getElementById("swapButton").addEventListener("click", function () {
+            // Get references to the article elements
+            var article1 = document.getElementById("article1");
+            var article2 = document.getElementById("article2");
 
-    // Clone the content of article1
-    var article1Content = article1.innerHTML;
+            // Clone the content of article1
+            var article1Content = article1.innerHTML;
 
-    // Replace the content of article1 with the content of article2
-    article1.innerHTML = article2.innerHTML;
+            // Replace the content of article1 with the content of article2
+            article1.innerHTML = article2.innerHTML;
 
-    // Replace the content of article2 with the cloned content of article1
-    article2.innerHTML = article1Content;
-});
-
+            // Replace the content of article2 with the cloned content of article1
+            article2.innerHTML = article1Content;
+        });
     </script>
 
     <footer class="footer-text">
