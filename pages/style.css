@@ -10,6 +10,12 @@ header {
     border: var(--dark-color) medium solid;
 }
 
+.logo {
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
 @media (max-width: 600px) {
     header {
         text-align: center;
@@ -21,6 +27,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
     gap: 10px;
+    clear: both;
 }
 
 nav p {
