@@ -182,6 +182,7 @@ article p:first-of-type {
 
 .article-image {
     float: left;
+    padding: 10px;
 }
 
 /* Container query for article width less than 500px */
